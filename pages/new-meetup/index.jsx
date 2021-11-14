@@ -1,5 +1,7 @@
+import NewMeetupForm from '../../components/meetups/NewMeetupForm';
+
 const NewMeetUp = (props) => {
-	return <h1>New Meet up</h1>;
+	return <NewMeetupForm />;
 };
 
 export default NewMeetUp;

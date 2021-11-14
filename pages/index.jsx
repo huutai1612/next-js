@@ -1,7 +1,17 @@
-import Layout from '../components/layout/Layout';
+import MeetupList from '../components/meetups/MeetupList';
 
-const MainPage = (props) => {
-	return <h1>LayOut Page</h1>;
+const DUMMY_LIST = [
+	{
+		id: 'm1',
+		image:
+			'https://www.travel688.com/wp-content/uploads/2018/01/San_Francisco_780x520px.jpg',
+		title: 'San Francisco',
+		address: '378',
+	},
+];
+
+const HomePage = (props) => {
+	return <MeetupList meetups={DUMMY_LIST} />;
 };
 
-export default MainPage;
+export default HomePage;
