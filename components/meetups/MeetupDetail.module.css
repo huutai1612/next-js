@@ -1,0 +1,33 @@
+.detail {
+	text-align: center;
+}
+
+.detail img {
+	width: 100%;
+	border-radius: 6px;
+	border: 4px solid #ccc;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.detail img:hover {
+	border: 4px solid rgba(51, 101, 177, 0.795);
+}
+
+.detail h1 {
+	padding-top: 0.5rem;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	color: rgba(51, 101, 177, 0.795);
+}
+
+.detail address {
+	font-size: 1.5rem;
+	color: rgba(201, 83, 83, 0.63);
+}
+
+.detail p {
+	text-align: left;
+	margin-left: 1rem;
+	padding-bottom: 1rem;
+	font-size: 1.25rem;
+}

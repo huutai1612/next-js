@@ -5,8 +5,8 @@ import classes from './MeetupItem.module.css';
 function MeetupItem(props) {
 	const router = useRouter();
 
-	const handleDetailClick = () => {
-		router.push(`/new-meetup/${props.id}`);
+	const showDetailHandler = () => {
+		router.push(`/${props.id}`);
 	};
 
 	return (
@@ -20,7 +20,7 @@ function MeetupItem(props) {
 					<address>{props.address}</address>
 				</div>
 				<div className={classes.actions}>
-					<button onClick={handleDetailClick}>Show Details</button>
+					<button onClick={showDetailHandler}>Show Details</button>
 				</div>
 			</Card>
 		</li>

@@ -6,7 +6,7 @@ const DUMMY_LIST = [
 		image:
 			'https://www.travel688.com/wp-content/uploads/2018/01/San_Francisco_780x520px.jpg',
 		title: 'San Francisco',
-		address: '378',
+		address: 'Some address',
 	},
 ];
 
