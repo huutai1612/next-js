@@ -14,6 +14,19 @@ const HomePage = (props) => {
 	return <MeetupList meetups={props.meetups} />;
 };
 
+// this is the server side rendering method of next js
+// export async function getServerSideProps(context) {
+// 	const req = context.req;
+// 	const res = context.res;
+
+// 	return {
+// 		props: {
+// 			meetups: DUMMY_LIST,
+// 		},
+// 	};
+// }
+
+// this is the static site generation method of next js
 export async function getStaticProps() {
 	// In here we can fetching any data
 	// And after fetching data we can pass it to this component via props
