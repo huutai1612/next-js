@@ -24,6 +24,8 @@ export async function getStaticProps() {
 	return {
 		props: {
 			meetups: DUMMY_LIST,
+			// revalidate will help us update data to the latest state
+			revalidate: 3600,
 		},
 	};
 }
