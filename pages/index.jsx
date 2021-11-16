@@ -1,7 +1,17 @@
+import { Fragment } from 'react';
+import Head from 'next/head';
 import MeetupList from '../components/meetups/MeetupList';
+
 const HomePage = (props) => {
-	console.log(props);
-	return <MeetupList meetups={props.meetups} />;
+	return (
+		<Fragment>
+			<Head>
+				<title>React meetups</title>
+				<meta name='This is the biggest meetup React' />
+			</Head>
+			<MeetupList meetups={props.meetups} />
+		</Fragment>
+	);
 };
 
 /* // this is the server side rendering method of next js
@@ -24,15 +34,6 @@ export const getStaticProps = async (context) => {
 	// Example :fetching some data and this fetch need await the data to return
 	// This function must return an object have key props
 	// And this props must be an object. This object will pass data into component via props
-
-	// const client = await MongoClient.connect(
-	// 	'mongodb+srv://huutai1612:Kieutrang0711@cluster0.rdo2f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-	// );
-	// const db = client.db();
-	// const meetupsCollection = db.collection('meetups');
-	// const meetups = await meetupsCollection.find().toArray();
-
-	// client.close();
 
 	const response = await fetch('http://localhost:3000/api/meetups');
 	const data = await response.json();
