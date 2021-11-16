@@ -1,16 +1,6 @@
 import MeetupList from '../components/meetups/MeetupList';
-
-const DUMMY_LIST = [
-	{
-		id: 'm1',
-		image:
-			'https://www.travel688.com/wp-content/uploads/2018/01/San_Francisco_780x520px.jpg',
-		title: 'San Francisco',
-		address: 'Some address',
-	},
-];
-
 const HomePage = (props) => {
+	console.log(props);
 	return <MeetupList meetups={props.meetups} />;
 };
 
@@ -35,12 +25,24 @@ export const getStaticProps = async (context) => {
 	// This function must return an object have key props
 	// And this props must be an object. This object will pass data into component via props
 
+	// const client = await MongoClient.connect(
+	// 	'mongodb+srv://huutai1612:Kieutrang0711@cluster0.rdo2f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+	// );
+	// const db = client.db();
+	// const meetupsCollection = db.collection('meetups');
+	// const meetups = await meetupsCollection.find().toArray();
+
+	// client.close();
+
+	const response = await fetch('http://localhost:3000/api/meetups');
+	const data = await response.json();
+
 	return {
 		props: {
-			meetups: DUMMY_LIST,
-			// revalidate will help us update data to the latest state
-			revalidate: 1,
+			meetups: data,
 		},
+		// revalidate will help us update data to the latest state
+		revalidate: 1,
 	};
 };
 

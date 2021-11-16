@@ -16,7 +16,6 @@ const MeetupDetailPage = (props) => {
 
 export const getStaticPaths = async () => {
 	return {
-		fallback: false,
 		paths: [
 			{
 				params: {
@@ -24,23 +23,25 @@ export const getStaticPaths = async () => {
 				},
 			},
 		],
+		fallback: false,
 	};
 };
 
 export const getStaticProps = async (context) => {
-	const meetupId = context.params.meetupId;
+	const meetUpId = context.params.meetupId;
+
 	return {
+		revalidate: 1,
 		props: {
 			meetupData: {
-				id: meetupId,
+				id: meetUpId,
 				image:
 					'https://www.travel688.com/wp-content/uploads/2018/01/San_Francisco_780x520px.jpg',
-				description: 'Meet up description',
-				address: 'Some address 5, Some City',
-				title: 'A First Meet up',
+				title: 'San Francisco',
+				address: 'Some address',
+				description: 'Some Description',
 			},
 		},
-		revalidate: 1,
 	};
 };
 
